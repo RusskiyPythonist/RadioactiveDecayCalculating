@@ -12,7 +12,7 @@ namespace RadioactiveDecayCalculating
             
 			Console.WriteLine("Введите химический элемент");
 			Console.Write(">> ");
-            string elementSymbol = Convert.ToString(Console.ReadLine()); // Ввод символа элемента с клавиатуры
+            string? elementSymbol = Convert.ToString(Console.ReadLine()); // Ввод символа элемента с клавиатуры
 
             if (elementSymbol != null && ElementsUtility.ElementIsExist(periodicTable, elementSymbol) == true)
             {
