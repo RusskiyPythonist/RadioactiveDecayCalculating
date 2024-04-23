@@ -6,7 +6,6 @@ namespace RadioactiveDecayCalculating
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
             var periodicTable = PeriodicTable.Load(); // Загрузка таблицы элементов
@@ -27,9 +26,9 @@ namespace RadioactiveDecayCalculating
                 Console.WriteLine("0 - Выход");
 
                 Console.Write(">> ");
-                int input = Convert.ToInt32(Console.ReadLine());
+                int inputOption = Convert.ToInt32(Console.ReadLine());
 
-                if (input == 1)
+                if (inputOption == 1)
                 {
                     Element helium = ElementsUtility.GetElementByName(periodicTable, "He"); // Получение информации об элементе "Гелий"
                     int heliumAtomicMass = Convert.ToInt32(helium.AtomicMass); // Атомная масса гелия
@@ -49,7 +48,7 @@ namespace RadioactiveDecayCalculating
                     Console.WriteLine($"{elementAtomicNumber}      {finalElementAtomicNumber}     {heliumAtomicNumber}");
 
                     Console.WriteLine($"Является изотопом: {elementIsIsotope}");
-                } else if (input == 2)
+                } else if (inputOption == 2)
                 {
                     const int electronAtomicMass = 0; // Атомная масса электрона
                     const int electronAtomicNumber = -1; // Атомный номер электрона (так как отрицательный заряд)
@@ -67,7 +66,7 @@ namespace RadioactiveDecayCalculating
                     Console.WriteLine($" {elementToDecay.Symbol} -->  {finalElement.Symbol}  +   e");
                     Console.WriteLine($"{elementAtomicNumber}      {finalElementAtomicNumber}    {electronAtomicNumber}");
 					
-					Console.WriteLine($"Является изотопом: {elementIsIsotope}");
+				    Console.WriteLine($"Является изотопом: {elementIsIsotope}");
                 }
             } else
             {
