@@ -69,7 +69,6 @@ namespace RadioactiveDecayCalculating
 					
 					Console.WriteLine($"Является изотопом: {elementIsIsotope}");
                 }
-
             } else
             {
                 Console.WriteLine("Элемент не введён или его не существует");
