@@ -18,4 +18,4 @@
 </dl>
 
 ## Таблица элементов Д. И. Менделеева
-<img src="RadioactiveDecayCalculating/Images/Table.jph">
+<img src="RadioactiveDecayCalculating/Images/Table.jpg">
