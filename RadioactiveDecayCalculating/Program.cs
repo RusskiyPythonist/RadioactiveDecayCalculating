@@ -15,7 +15,7 @@ namespace RadioactiveDecayCalculating // Note: actual namespace depends on the p
 
             return isAtTable;
         }
-        
+
         static private Element GetElementByName(PeriodicTable periodicTable, string elementName)
         {
             return periodicTable[elementName];
@@ -25,17 +25,21 @@ namespace RadioactiveDecayCalculating // Note: actual namespace depends on the p
         {
             return periodicTable[atomicNumber];
         }
+		
+		static private bool IsIsotope(int atomicMass1, int atomicMass2) { return atomicMass1 == atomicMass2 ? false : true; }
 
         static void Main(string[] args)
         {
             var periodicTable = PeriodicTable.Load();
-
+            
+			Console.WriteLine("Введите химический элемент");
+			Console.Write(">> ");
             string elementName = Convert.ToString(Console.ReadLine());
 
             if (elementName != null && elementName.Length <= 2 && ElementIsExist(periodicTable, elementName) == true)
             {
                 Element elementToDecay = GetElementByName(periodicTable, elementName);
-                int elementAtomicMass = Convert.ToInt32(elementToDecay.AtomicMass);
+                int elementAtomicMass = Convert.ToInt32(Math.Ceiling(elementToDecay.AtomicMass));
                 int elementAtomicNumber = elementToDecay.AtomicNumber;
 
                 Console.WriteLine("Введите реакцию распада");
@@ -57,7 +61,7 @@ namespace RadioactiveDecayCalculating // Note: actual namespace depends on the p
                     Element finalElement = GetElementByAtomicNumber(periodicTable, finalElementAtomicNumber);
 
                     int tableAtomicMass = Convert.ToInt32(finalElement.AtomicMass);
-                    bool elementIsIsotope = tableAtomicMass == finalElementAtomicMass ? false : true;
+                    bool elementIsIsotope = IsIsotope(tableAtomicMass, finalElementAtomicMass);
 
                     Console.WriteLine($"{elementAtomicMass}     {finalElementAtomicMass}    {heliumAtomicMass}");
                     Console.WriteLine($" {elementToDecay.Symbol} -->  {finalElement.Symbol}  +  {helium.Symbol}");
@@ -74,11 +78,13 @@ namespace RadioactiveDecayCalculating // Note: actual namespace depends on the p
                     Element finalElement = GetElementByAtomicNumber(periodicTable, finalElementAtomicNumber);
 
                     int tableAtomicMass = Convert.ToInt32(finalElement.AtomicMass);
-                    bool elementIsIsotope = tableAtomicMass == finalElementAtomicMass ? false : true;
+                    bool elementIsIsotope = IsIsotope(tableAtomicMass, elementAtomicMass);
 
-                    Console.WriteLine($"{elementAtomicMass}      {finalElementAtomicMass}      {electronAtomicMass}");
+                    Console.WriteLine($"{elementAtomicMass}      {finalElementAtomicMass}     {electronAtomicMass}");
                     Console.WriteLine($" {elementToDecay.Symbol} -->  {finalElement.Symbol}  +   e");
-                    Console.WriteLine($"{elementAtomicNumber}      {finalElementAtomicNumber}     {electronAtomicNumber}");
+                    Console.WriteLine($"{elementAtomicNumber}      {finalElementAtomicNumber}    {electronAtomicNumber}");
+					
+					Console.WriteLine($"Является изотопом: {elementIsIsotope}");
                 }
 
             } else
