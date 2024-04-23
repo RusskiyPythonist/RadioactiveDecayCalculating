@@ -48,9 +48,9 @@ namespace RadioactiveDecayCalculating // Note: actual namespace depends on the p
                 Console.WriteLine("0 - Выход");
 
                 Console.Write(">> ");
-                int choose = Convert.ToInt32(Console.ReadLine());
+                int input = Convert.ToInt32(Console.ReadLine());
 
-                if (choose == 1)
+                if (input == 1)
                 {
                     Element helium = GetElementByName(periodicTable, "He");
                     int heliumAtomicMass = Convert.ToInt32(helium.AtomicMass);
@@ -68,7 +68,7 @@ namespace RadioactiveDecayCalculating // Note: actual namespace depends on the p
                     Console.WriteLine($"{elementAtomicNumber}      {finalElementAtomicNumber}     {heliumAtomicNumber}");
 
                     Console.WriteLine($"Является изотопом: {elementIsIsotope}");
-                } else if (choose == 2)
+                } else if (input == 2)
                 {
                     const int electronAtomicMass = 0;
                     const int electronAtomicNumber = -1;
