@@ -18,5 +18,5 @@
 ## Таблица элементов Д. И. Менделеева
 <img src="RadioactiveDecayCalculating/Images/Table.jpg">
 
-## Используемые в проекте пакеты NuGet
+## Используемые пакеты NuGet
 - <a href="https://github.com/Bluegrams/periodic-table-data">Periodica.Data</a>
