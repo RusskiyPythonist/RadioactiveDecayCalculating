@@ -19,4 +19,4 @@
 <img src="RadioactiveDecayCalculating/Images/Table.jpg">
 
 ## Используемые в проекте пакеты NuGet
-- Был использован пакет <a href="https://github.com/Bluegrams/periodic-table-data">Periodica.Data</a>
+- <a href="https://github.com/Bluegrams/periodic-table-data">Periodica.Data</a>
